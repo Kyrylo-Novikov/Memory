@@ -1,0 +1,17 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.start {
+    background-color: #303131;
+  }
+  &.settings #field {
+    width: 100%;
+    padding: 0 170px;
+    max-width: 1440px;
+  }
+  &.settings {
+    background-color: red;
+  }
+}

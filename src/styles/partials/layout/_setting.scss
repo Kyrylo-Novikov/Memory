@@ -1,0 +1,16 @@
+.settings-sec {
+  .setting-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .choosen-theme {
+    background-color: blue;
+  }
+  .setting-choose-wrapper {
+    display: flex;
+    flex-direction: row;
+    .icon-setting {
+      height: 32px;
+    }
+  }
+}
