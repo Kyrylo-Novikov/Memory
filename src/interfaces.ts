@@ -1,11 +1,19 @@
+import { SettingType } from "./types";
+
+/**
+ * Represents the setting that you have to select for preparing the game
+ */
 export interface Setting {
-  type: "theme" | "player" | "fieldSize";
+  type: SettingType;
   legend: string;
-  options: Options[];
+  option: Option[];
   icon?: string;
 }
 
-export interface Options {
+/**
+ * Represents the option beetwenn you have to choose
+ */
+export interface Option {
   id: string;
   value: string | number;
   label: string;
