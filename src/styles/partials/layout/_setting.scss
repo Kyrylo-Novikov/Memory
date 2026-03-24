@@ -1,16 +1,173 @@
 .settings-sec {
+  font-family: "almarai";
+  font-size: var(--fontSize-2);
+  display: flex;
+  flex-direction: column;
+  gap: 62px;
+  h1 {
+    font-size: var(--fontSize-9);
+    width: fit-content;
+    position: relative;
+    padding-left: 24px;
+  }
+  h1::after {
+    display: block;
+    content: "";
+    background-color: var(--color-6);
+    height: 4px;
+    width: calc(100% + 20px);
+    position: absolute;
+    left: 0px;
+  }
+  h1::before {
+    display: block;
+    content: "";
+    background-color: var(--color-6);
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    rotate: 45deg;
+    bottom: -8px;
+    left: 0px;
+  }
   .setting-wrapper {
     display: flex;
     justify-content: space-between;
+    .settings-content {
+      display: flex;
+      flex-direction: column;
+      gap: 54px;
+    }
   }
-  .choosen-theme {
-    background-color: blue;
+}
+.setting-choose-wrapper {
+  display: flex;
+  flex-direction: row;
+  .icon-setting {
+    height: 32px;
   }
-  .setting-choose-wrapper {
+  fieldset {
     display: flex;
-    flex-direction: row;
-    .icon-setting {
-      height: 32px;
+    flex-direction: column;
+    gap: 16;
+    legend {
+      font-weight: 700;
+      font-size: var(--fontSize-3);
+    }
+    .option-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-left: 12px;
+      div {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 20px;
+        input {
+          width: 12px;
+          aspect-ratio: 1;
+          background-color: var(--color-4);
+          border: 2px solid black;
+          padding: 4px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        input:checked {
+          background-color: var(--color-4);
+          border: 1px solid black;
+          background-image: radial-gradient(circle, black 20%, transparent 30%);
+          padding: 5px;
+        }
+        input:checked ~ label {
+          font-weight: 700;
+        }
+        input:checked ~ .visual-for-checked::after {
+          display: block;
+          content: "";
+          background-color: var(--color-6);
+          height: 4px;
+          width: 100%;
+        }
+        input:checked ~ .visual-for-checked::before {
+          display: block;
+          content: "";
+          background-color: var(--color-6);
+          height: 12px;
+          width: 12px;
+          position: absolute;
+          rotate: 45deg;
+          bottom: 3px;
+          left: 32px;
+        }
+        label {
+          cursor: pointer;
+        }
+        .visual-for-checked {
+          width: 38px;
+        }
+      }
+    }
+  }
+}
+
+.choosen {
+  width: 50%;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  .img-theme {
+    max-width: 460px;
+    max-height: 412px;
+    border-radius: 16px;
+  }
+  aside {
+    min-width: 660px;
+    padding: 14px 20px;
+    align-items: center;
+    height: 81px;
+    display: flex;
+    gap: 16px;
+    background-color: var(--color-5);
+    .single-choose-wrapper {
+      display: flex;
+      width: 33%;
+      gap: 4px;
+      justify-content: center;
+      &#show-player {
+        flex-direction: row-reverse;
+      }
+    }
+    .output-choose {
+      display: flex;
+    }
+    .separator {
+      rotate: 25deg;
+      background-color: var(--color-6);
+      z-index: 1;
+      height: 56px;
+    }
+
+    .separator-unchecked {
+      width: 8px;
+    }
+    .separator-checked {
+      width: 4px;
+    }
+    .separator-checked::after {
+      display: block;
+      content: "";
+      background-color: var(--color-6);
+      height: 12px;
+      width: 12px;
+      position: absolute;
+      rotate: 45deg;
+      bottom: 0px;
+      left: -5px;
     }
   }
 }
