@@ -10,18 +10,19 @@ startBtnRef.addEventListener("click", openSettings);
  *Generates the whole setting layout and change the style of the body
  */
 function openSettings(): void {
-  toggleStyleClass("start", "settings");
+  toggleStyleClass(document.body, "start", "settings");
   fieldRef.innerHTML = showSettingsTemplate();
   generateSettings();
 }
 
 /**
  * Toggle the classes on the body for change of the displayed style
+ * @param element  HTMLElement for class change
  * @param firstClass  class that i wont to change
  * @param secondClass class that i wont to add
  */
-function toggleStyleClass(firstClass: string, secondClass: string): void {
-  let bodyRef = document.body;
-  bodyRef.classList.toggle(firstClass);
-  bodyRef.classList.toggle(secondClass);
+export function toggleStyleClass(element: HTMLElement, firstClass: string, secondClass: string): void {
+  let elementRef = element;
+  elementRef.classList.toggle(firstClass);
+  elementRef.classList.toggle(secondClass);
 }
