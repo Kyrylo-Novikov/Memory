@@ -1,0 +1,30 @@
+body {
+  &.game {
+    &[data-theme="gaming"] {
+      background-color: var(--color-2);
+      font-family: var(--fontFam-orb);
+      #field {
+        .game-field-section {
+          header {
+            background-color: #fd96c933;
+            .btn {
+              background-color: #ed1b7614;
+              border: 2px solid #e71c4f;
+              color: var(--color-4);
+              font-family: var(--fontFam-orb);
+            }
+
+            .current-player {
+              color: var(--color-4);
+              font-size: var(--fontSize-6);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.player-icon {
+  width: 22px;
+  height: 28px;
+}

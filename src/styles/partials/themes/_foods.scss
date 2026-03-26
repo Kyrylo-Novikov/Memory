@@ -1,0 +1,28 @@
+body {
+  &.game {
+    &[data-theme="foods"] {
+      font-family: var(--fontFam-del-un);
+      #field {
+        .game-field-section {
+          header {
+            background-color: #f0f3f4;
+            .btn {
+              font-size: var(--fontSize-1);
+              background-color: #ffffff;
+              border: 3px solid #f3832d;
+              color: #f3832d;
+              font-family: var(--fontFam-del-un);
+              .exit-icon {
+                background-color: #f3832d;
+              }
+            }
+            .current-player {
+              color: #a45212;
+              font-size: var(--fontSize-6);
+            }
+          }
+        }
+      }
+    }
+  }
+}
