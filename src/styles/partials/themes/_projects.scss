@@ -1,24 +1,68 @@
+@use "../abstract/mixins" as *;
+
 body {
   &.game {
     &[data-theme="projects"] {
-      font-family: var(--fontFam-orb);
+      font-family: var(--fontFam-fig);
+
       #field {
+        &.win-screen {
+          background-color: #1e7594;
+          height: 100vh;
+        }
         .game-field-section {
           header {
             background-color: #f0f3f4;
-            .btn {
-              font-size: var(--fontSize-2);
-              background-color: #bfe5f2;
-              color: #1e7594;
-              font-family: var(--fontFam-fig);
-              .exit-icon {
-                background-color: #1e7594;
-              }
-            }
-            .current-player {
-              color: #1e7594;
-              font-size: var(--fontSize-6);
-            }
+          }
+          .current-player {
+            color: #1e7594;
+            font-size: var(--fontSize-6);
+          }
+        }
+      }
+      .win-screen {
+        gap: 24px;
+        h1 {
+          font-size: 130px;
+          font-weight: 800;
+          color: #fd5b4f;
+          font-family: var(--fontFam-fig);
+          padding-bottom: 32px;
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        p {
+          font-family: var(--fontFam-fig);
+          color: var(--color-4);
+          font-size: var(--fontSize-7);
+        }
+      }
+      .btn {
+        font-size: var(--fontSize-2);
+        font-weight: 700;
+        color: #1e7594;
+        font-family: var(--fontFam-fig);
+        background-color: #fd8a81;
+        .exit-icon {
+          background-color: #1e7594;
+        }
+        background-color: #bfe5f2;
+        &.exit {
+          background-color: #fd8a81;
+          color: var(--color-4);
+          box-shadow: 3px 3px 5px 0px #2f2e2e33;
+        }
+        &.back {
+          background-color: #bfe5f2;
+          box-shadow: 3px 3px 5px 0px #2f2e2e33;
+        }
+      }
+      .quit-menu-overlay {
+        .menu-field {
+          text-align: center;
+
+          p {
+            font-size: var(--fontSize-5);
+            font-weight: 700;
           }
         }
       }

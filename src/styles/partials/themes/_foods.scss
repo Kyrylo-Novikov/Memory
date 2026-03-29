@@ -1,25 +1,62 @@
+@use "../abstract/mixins" as *;
 body {
   &.game {
     &[data-theme="foods"] {
       font-family: var(--fontFam-del-un);
-      #field {
-        .game-field-section {
-          header {
-            background-color: #f0f3f4;
-            .btn {
-              font-size: var(--fontSize-1);
-              background-color: #ffffff;
-              border: 3px solid #f3832d;
-              color: #f3832d;
-              font-family: var(--fontFam-del-un);
-              .exit-icon {
-                background-color: #f3832d;
-              }
-            }
-            .current-player {
-              color: #a45212;
-              font-size: var(--fontSize-6);
-            }
+      .win-screen {
+        background-color: #f3832d;
+        height: 100vh;
+      }
+      header {
+        background-color: #f0f3f4;
+        .btn {
+          font-size: var(--fontSize-1);
+          background-color: #ffffff;
+          border: 3px solid #f3832d;
+          color: #f3832d;
+          font-family: var(--fontFam-del-un);
+          .exit-icon {
+            background-color: #f3832d;
+          }
+        }
+        .current-player {
+          color: #a45212;
+          font-size: var(--fontSize-6);
+        }
+      }
+      .win-screen {
+        gap: 24px;
+        h1 {
+          font-size: 130px;
+          color: var(--color-4);
+          font-family: var(--fontFam-klee);
+          padding-bottom: 32px;
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        p {
+          font-family: var(--fontFam-klee);
+          color: var(--color-4);
+          font-size: 42px;
+        }
+      }
+      .btn {
+        font-family: var(--fontFam-orb);
+        &.exit {
+        }
+        &.back {
+          color: var(--color-4);
+          border: 3px solid #f3832d;
+          background-color: #ffab3e;
+        }
+      }
+      .quit-menu-overlay {
+        .menu-field {
+          text-align: center;
+          p {
+            font-family: var(--fontFam-klee);
+            font-size: var(--fontSize-5);
+            font-weight: 600;
+            color: #a45212;
           }
         }
       }
