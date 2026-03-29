@@ -84,3 +84,14 @@
 .btn {
   font-family: "red rose";
 }
+
+@font-face {
+  font-family: "klee";
+  src: url(/assets/fonts/KleeOne-Regular.ttf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "klee";
+  src: url(/assets/fonts/KleeOne-SemiBold.ttf);
+  font-weight: bold;
+}
