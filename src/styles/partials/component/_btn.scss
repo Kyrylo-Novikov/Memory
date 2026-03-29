@@ -1,0 +1,47 @@
+.btn {
+  border: none;
+  background: none; // Reset
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content; // Standardwert
+  &--start {
+    height: 98px;
+    width: 250px;
+    justify-content: space-around;
+    font-size: var(--fontSize-7);
+    font-weight: 700;
+    color: var(--color-1);
+    background-color: var(--color-6);
+  }
+  &--init-game {
+    gap: 8px;
+    padding: 14px 20px;
+    height: 100%;
+    width: 126px;
+    justify-content: space-around;
+    font-size: var(--fontSize-2);
+    font-weight: 700;
+    color: var(--color-1);
+    background-color: var(--color-6);
+  }
+
+  &--game {
+    gap: 4px;
+    height: 54px;
+    padding: 12px 20px;
+  }
+}
+
+.btn__exit-icon {
+  width: 24px;
+  height: 24px;
+  background-color: currentColor; // Übernimmt die Textfarbe des Buttons!
+  mask-image: url("/assets/icons/exit.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url("/assets/icons/exit.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+}

@@ -1,0 +1,173 @@
+@use "../abstract/mixins" as *;
+
+body.game {
+  position: relative;
+  width: 100%;
+  display: flex;
+  #field {
+    max-width: 1440px;
+    width: 100%;
+    min-height: 98dvh;
+    padding: 0 112px;
+    &.win-screen {
+      @include flex-center;
+    }
+  }
+  .win-screen {
+    @include flex-center;
+    flex-direction: column;
+  }
+  .game-field-section {
+    // height: 800px;
+  }
+  header {
+    height: 102px;
+    align-items: center;
+    padding: 24px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .current-player {
+    display: flex;
+    gap: 18px;
+  }
+  .player-wrapper {
+    width: fit-content;
+    padding: 0 16px;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 54px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 40px;
+    .count {
+      font-size: 30px;
+      &--orange {
+      }
+      &--blue {
+      }
+    }
+    .orange {
+      background-image: url(/assets/icons/orange_chess_pawn.svg);
+    }
+    .blue {
+      background-image: url(/assets/icons/blue_chess_pawn.svg);
+    }
+  }
+  .first-player,
+  .second-player {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .first-player {
+    color: #2bb1ff;
+  }
+  .second-player {
+    color: #f58e39;
+  }
+  .player-name {
+    display: none;
+  }
+  .quit-menu-overlay {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.192);
+    @include flex-center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    .menu-field {
+      max-width: 480px;
+      padding: 40px;
+      background-color: var(--color-4);
+      @include flex-center;
+      flex-direction: column;
+      gap: 54px;
+      border-radius: 20px;
+      div {
+        display: flex;
+        gap: 24px;
+      }
+    }
+  }
+  .quit-menu-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+  }
+}
+.btn-wrapper {
+  .btn {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    width: fit-content;
+    padding: 12px 20px;
+    border-radius: 10px;
+  }
+  .exit-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    mask-image: url("/assets/icons/exit.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url("/assets/icons/exit.svg");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+  }
+}
+.currentplayer-bg {
+  padding: 4px 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.orange {
+    background-color: #f58e39;
+  }
+  &.blue {
+    background-color: #2bb1ff;
+  }
+}
+.player-icon {
+  width: 20px;
+  height: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  &.currentplayer {
+    background-color: #ffffff;
+    mask-image: url(/assets/icons/orange_chess_pawn.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url(/assets/icons/orange_chess_pawn.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+  }
+}
+.game-field {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
+img {
+  &.front {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
