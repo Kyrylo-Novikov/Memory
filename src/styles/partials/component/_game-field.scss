@@ -17,9 +17,6 @@ body.game {
     @include flex-center;
     flex-direction: column;
   }
-  .game-field-section {
-    // height: 800px;
-  }
   header {
     height: 102px;
     align-items: center;
@@ -43,11 +40,10 @@ body.game {
     display: flex;
     gap: 40px;
     .count {
+      @include flex-center;
+      height: 42px;
+      width: 32px;
       font-size: 30px;
-      &--orange {
-      }
-      &--blue {
-      }
     }
     .orange {
       background-image: url(/assets/icons/orange_chess_pawn.svg);
@@ -102,13 +98,35 @@ body.game {
     pointer-events: auto;
     z-index: 1;
   }
+  .end-screen {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    gap: 64px;
+  }
+  .wrapper-winner-img {
+    @include flex-center;
+    flex-direction: column;
+    gap: 64px;
+    .final-img {
+      aspect-ratio: 1;
+      min-height: 250px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
 }
 .btn-wrapper {
+  &.no-draw {
+    display: none;
+  }
+  &.is-draw {
+    display: flex;
+  }
   .btn {
     gap: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     height: 54px;
     width: fit-content;
     padding: 12px 20px;
@@ -159,7 +177,7 @@ body.game {
 }
 .game-field {
   display: grid;
-  gap: 10px;
+  gap: 16px;
   padding: 10px;
   justify-content: center;
 }
