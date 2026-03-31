@@ -22,7 +22,7 @@ function newGame(e: Event) {
   if (!target) return;
   if (target.closest("#back-to-settings")) {
     currentGame = null;
-    toggleStyleClass(document.getElementById("field") as HTMLElement, "win-screen", "-");
+    fieldRef.classList.remove("win-screen");
     toggleStyleClass(document.body, "game", "settings");
     fieldRef.innerHTML = showSettingsTemplate();
     generateSettings();
