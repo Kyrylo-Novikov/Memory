@@ -1,7 +1,9 @@
 import { Setting } from "./interfaces";
 import { Game } from "./game";
-import { currentGame } from "./main";
 
+/**
+ * Returns the HTML template string for the settings screen.
+ */
 export function showSettingsTemplate() {
   return `<section class="settings-sec">
                           <h1 class="">Settings</h1>
@@ -25,6 +27,11 @@ export function showSettingsTemplate() {
                         </section>`;
 }
 
+/**
+ * Returns the HTML template string for a single setting group with radio buttons.
+ * @param setting The setting object containing typ, legend, icon and options
+ * @returns The HTML template string for the setting group
+ */
 export function createChooseTemplate(setting: Setting) {
   let construcktSettings = "";
   construcktSettings += `<div class="setting-choose-wrapper">
@@ -45,6 +52,11 @@ export function createChooseTemplate(setting: Setting) {
   return construcktSettings;
 }
 
+/**
+ * Returns the HTML template string for the game field including
+ * the player scores, current player indicator and exit menu.
+ * @param currentGame The current game instance used to display the active player
+ */
 export function createGameFieldTemplate(currentGame: Game) {
   return `<section class="game-field-section">
                           <div class="game-field-wrapper" id="game-field-wrapper">
@@ -87,6 +99,11 @@ export function createGameFieldTemplate(currentGame: Game) {
                         </section>`;
 }
 
+/**
+ * Returns the HTML template string for the game over screen with the final scores.
+ *
+ * @param currentGame The current game instance used to display the final scores
+ */
 export function finishGameTemp(currentGame: Game) {
   return ` <div class="win-screen">
                                   <h1>
@@ -116,6 +133,11 @@ export function finishGameTemp(currentGame: Game) {
                                 </div>`;
 }
 
+/**
+ * Returns the HTML template string for the winner screen
+ * displaying the winning player or a draw.
+ * @param currentGame The current game instance used to determine and display the winner
+ */
 export function showWinnerTemplate(currentGame: Game) {
   return `<div class="end-screen">
             <div class="confetti"> </div>
