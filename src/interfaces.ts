@@ -19,3 +19,12 @@ export interface Option {
   label: string;
   path?: string;
 }
+
+/**
+ * Represents the Game
+ */
+export interface GameInt {
+  theme: string;
+  player: string;
+  cards: number;
+}
