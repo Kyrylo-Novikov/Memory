@@ -4,21 +4,26 @@ body {
   &.game {
     &[data-theme="projects"] {
       font-family: var(--fontFam-fig);
-
-      #field {
-        &.win-screen {
-          background-color: #1e7594;
-          height: 100vh;
+      .card--matched {
+        .card__face--front {
+          border: 2px solid #1e7594;
+          box-sizing: border-box;
+          border-radius: 13px;
         }
-        .game-field-section {
-          header {
-            background-color: #f0f3f4;
-          }
-          .current-player {
-            color: #1e7594;
-            font-size: var(--fontSize-6);
-          }
+      }
+      &:has(.win-screen) {
+        background-color: #1e7594;
+      }
+      &:has(.is-draw) {
+        background-color: #1e7594;
+        @include flex-center;
+        transform: translateY(30%);
+        .btn {
+          background-color: var(--color-4);
         }
+      }
+      &:has(.end-screen) {
+        background-color: #1e7594;
       }
       .win-screen {
         gap: 24px;
@@ -42,6 +47,7 @@ body {
         color: #1e7594;
         font-family: var(--fontFam-fig);
         background-color: #fd8a81;
+        transition: all 200ms ease-in-out;
         .exit-icon {
           background-color: #1e7594;
         }
@@ -50,10 +56,18 @@ body {
           background-color: #fd8a81;
           color: var(--color-4);
           box-shadow: 3px 3px 5px 0px #2f2e2e33;
+          &:hover {
+            background-color: #ed5b50;
+          }
         }
         &.back {
           background-color: #bfe5f2;
           box-shadow: 3px 3px 5px 0px #2f2e2e33;
+        }
+        &#exit-btn:hover,
+        &.back:hover {
+          background-color: #1e7594;
+          color: var(--color-4);
         }
       }
       .quit-menu-overlay {
@@ -64,6 +78,24 @@ body {
             font-size: var(--fontSize-5);
             font-weight: 700;
           }
+        }
+      }
+      .end-screen {
+        h1 {
+          color: var(--color-4);
+          font-size: 80px;
+        }
+      }
+      .final-img {
+        filter: drop-shadow(2px 2px 0px white) // Schatten rechts unten
+          drop-shadow(-2px 2px 0px white) // Schatten links unten
+          drop-shadow(2px -2px 0px white) // Schatten rechts oben
+          drop-shadow(-2px -2px 0px white); // Schatten links oben
+        &.orange {
+          background-image: url(/assets/icons/orange_chess_pawn.svg);
+        }
+        &.blue {
+          background-image: url(/assets/icons/blue_chess_pawn.svg);
         }
       }
     }

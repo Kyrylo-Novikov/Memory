@@ -4,6 +4,9 @@ body {
     &[data-theme="gaming"] {
       background-color: var(--color-2);
       font-family: var(--fontFam-orb);
+      .card--matched {
+        border: 3px solid #ed1b76;
+      }
       #field {
         .game-field-section {
           header {
@@ -44,15 +47,31 @@ body {
         border: 2px solid #e71c4f;
         color: var(--color-4);
         font-family: var(--fontFam-orb);
+        &:hover .btn__exit-icon {
+          background: #e71c4f;
+        }
         &.exit {
+          background-color: #ed1b7614;
           color: #ed1b76;
           width: 100%;
           height: 44px;
+          border: 3px solid transparent;
+          min-width: 146px;
+        }
+        &#exit-btn:hover {
+          color: var(--color-4);
+          background-color: #ed1b7624;
+          border: 3px solid #e71c4f;
         }
         &.back {
+          border: 2px solid #e71c4f;
           background-color: #ed1b76;
           width: 100%;
           height: 44px;
+          &:hover {
+            color: #ed1b76;
+            background-color: var(--color-4);
+          }
         }
       }
       .quit-menu-overlay {
@@ -67,10 +86,36 @@ body {
           }
         }
       }
+
+      .win-screen:has(.end-screen) {
+        h1 {
+          font-size: 64px;
+          font-weight: 700;
+          font-family: var(--fontFam-orb);
+          &.orange {
+            color: #f58e39;
+          }
+          &.blue {
+            color: #2bb1ff;
+          }
+        }
+        p {
+          font-size: var(--fontSize-7);
+          color: var(--color-4);
+          font-weight: 400;
+        }
+        .btn {
+          color: var(--color-4);
+          font-size: var(--fontSize-3);
+        }
+      }
+      .final-img {
+        background-image: url(/assets/icons/pockal.svg);
+      }
     }
   }
-}
-.player-icon {
-  width: 22px;
-  height: 28px;
+  .player-icon {
+    width: 22px;
+    height: 28px;
+  }
 }

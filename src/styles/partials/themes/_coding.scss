@@ -1,5 +1,12 @@
 @use "../abstract/mixins" as *;
 body.game[data-theme="coding"] {
+  .card--matched {
+    .card__face--front {
+      border: 5px solid #4dd5bc !important;
+      box-sizing: border-box; // <--- Das ist hier SEHR wichtig!
+      border-radius: inherit;
+    }
+  }
   background-color: var(--color-1);
   font-family: var(--fontFam-rr);
   header {
@@ -31,7 +38,7 @@ body.game[data-theme="coding"] {
     font-size: var(--fontSize-3);
     font-weight: 700;
     padding: 17px 20px;
-    gap: 20px;
+    gap: 10px;
     border-radius: 0;
     .player-icon {
       width: 24px;
@@ -103,6 +110,60 @@ body.game[data-theme="coding"] {
     }
     &.back {
       background-color: #66cfbc;
+      &:hover {
+        background-color: #66cfbcb2;
+        border: 3px solid #3abca4;
+      }
+    }
+    &#exit-btn:hover {
+      border: 3px solid #4dd5bc;
+      background: #86e9d642;
+      box-shadow: 4px 4px 6px 0px #4dd5bc33;
+    }
+  }
+
+  .win-screen:has(.end-screen) {
+    h1 {
+      font-size: 60px;
+      -webkit-text-shadow: 0px 0px 0px #ffffff;
+      text-shadow: 0px 0px 0px #ffffff;
+      font-weight: 900;
+      text-transform: uppercase;
+      &.orange.coding {
+        color: #f58e39;
+      }
+      &.blue.coding {
+        color: #2bb1ff;
+      }
+    }
+    p {
+      font-size: var(--fontSize-7);
+      color: var(--color-4);
+      font-weight: 400;
+    }
+    .btn {
+      color: var(--color-4);
+      font-size: var(--fontSize-3);
+    }
+    .confetti {
+      position: absolute;
+      top: 0;
+      height: 36vh;
+      width: 100vw;
+      background-image: url(/assets/icons/Confetti.png); // Dein Bild
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  .final-img {
+    &.orange {
+      background-image: url(/assets/icons/orange_chess_pawn.svg);
+      z-index: 10;
+    }
+    &.blue {
+      background-image: url(/assets/icons/blue_chess_pawn.svg);
+      z-index: 10;
     }
   }
 }
