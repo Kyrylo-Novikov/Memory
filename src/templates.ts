@@ -81,7 +81,7 @@ export function createGameFieldTemplate(currentGame: Game) {
                                 <div  id="current-player" class="currentplayer-bg ${currentGame.currentPlayer}"><div  class="player-icon currentplayer"></div></div>
                                 </div>
                                 <div class="btn-wrapper">
-                                  <button class="btn btn--game menu" id="exit-btn"> <span class="btn__exit-icon"></span>Exit game </button>
+                                  <button class="btn btn--game menu " id="exit-btn"> <span class="btn__exit-icon"></span>Exit game </button>
                                   <div class="quit-menu-overlay">
                                     <div class="menu-field"> 
                                       <p>Are you sure you want to quit the game?</p>
@@ -101,7 +101,6 @@ export function createGameFieldTemplate(currentGame: Game) {
 
 /**
  * Returns the HTML template string for the game over screen with the final scores.
- *
  * @param currentGame The current game instance used to display the final scores
  */
 export function finishGameTemp(currentGame: Game) {
