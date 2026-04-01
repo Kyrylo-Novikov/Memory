@@ -10,7 +10,7 @@ export function showSettingsTemplate() {
                           <div class="setting-wrapper">
                             <div id="settings-content" class="settings-content"></div>
                             <div class="choosen">
-                              <img class="img-theme" id="img-theme" src="/assets/imgs/game-theme/theme-placeholder.png"  alt="img of the theme">
+                              <img class="img-theme" id="img-theme" src="./assets/imgs/game-theme/theme-placeholder.png"  alt="img of the theme">
                               <aside>
                                 <div class="single-choose-wrapper">Theme<div id="show-theme" class="output-chosen"></div></div>
                                 <span class="separator separator-unchecked"></span>

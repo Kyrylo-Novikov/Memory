@@ -11,7 +11,7 @@ export class Card {
   name: string = "";
   theme: string = "";
   /** Base path to the images */
-  readonly BASE_PATH: string = "/assets/imgs/";
+  readonly BASE_PATH: string = "./assets/imgs/";
 
   /**
    * @param width Width of the card in pixels
