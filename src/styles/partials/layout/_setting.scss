@@ -64,7 +64,6 @@
         cursor: pointer;
         display: flex;
         align-items: center;
-        gap: 12px;
         height: 20px;
         input {
           width: 12px;
@@ -104,6 +103,7 @@
         }
         label {
           cursor: pointer;
+          padding: 4px 10px;
         }
         .visual-for-checked {
           width: 38px;
