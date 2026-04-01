@@ -1,11 +1,16 @@
 .btn {
+  transition: all 200ms ease-in-out;
   border: none;
-  background: none; // Reset
+  background: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content; // Standardwert
+  width: fit-content;
+  &:disabled {
+    background: #dbdbd6;
+    cursor: not-allowed;
+  }
   &--start {
     height: 98px;
     width: 250px;
@@ -14,6 +19,19 @@
     font-weight: 700;
     color: var(--color-1);
     background-color: var(--color-6);
+    transition: all 0.2s ease-in;
+    .img-hover {
+      transition: all 0.2s ease-in;
+    }
+    &:hover {
+      transform: scaleX(1.1) scaleY(1.02);
+      .img-hover {
+        rotate: -30deg;
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
   }
   &--init-game {
     gap: 8px;
@@ -25,6 +43,17 @@
     font-weight: 700;
     color: var(--color-1);
     background-color: var(--color-6);
+    transition: all 0.2s ease-in;
+    .img-hover {
+      transition: all 0.2s ease-in;
+    }
+    &:enabled:hover {
+      transform: scale(1.1);
+      .img-hover {
+        transform: scale(1.1);
+        rotate: -30deg;
+      }
+    }
   }
 
   &--game {
@@ -35,6 +64,7 @@
 }
 
 .btn__exit-icon {
+  transition: all 200ms ease-in-out;
   width: 24px;
   height: 24px;
   background-color: currentColor; // Übernimmt die Textfarbe des Buttons!
